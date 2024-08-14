@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Open+Sans:wght@500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html, body {
+    height:100%;
+}
+
+body {
+    margin: 0px;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;   
+}
+
+/* NAVBAR CSS */
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    height: 3.5em;
+    font-size: 1.2em;
+}
+
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    cursor: pointer;
+    color: #BF40BF;
+    display: inline;
+    margin: 0.25em;
+    text-decoration: none;
+}
+
+.navbar li a {
+    color: #BF40BF;
+    text-decoration: none;
+}
+
+.logo {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo:active {
+    color: black;
+}
+
+.logo::after {
+    color: #000;
+}
+
+/* Container One CSS */
+.container {
+    background-color: red;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    min-height: 40em;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.left-header {
+    padding: 0 1em;
+    margin: 0 20px 0 auto;
+    min-width: 300px;
+    border:1px solid black;
+}
+
+.right-header {
+    padding: 0 1em;
+    margin-right: auto;
+    margin-left: 0;
+    min-width: 300px;
+    border:1px solid black;
+}
+
+.right-header h1 {
+    font-size: 3em;
+    width: 7em;
+}
+.left-header h1 {
+    font-size: 3em;
+    width: 7em;
+}
+
+.btn {
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #BF40BF;
+    color: white;
+    height: 3em;
+    width: 7.5em;
+}
+
+/* Register */
+
+@media screen and (max-width: 766px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-header {
+        margin: 0;
+    }
+
+    .left-header {
+        margin: 0;
+    }
+}
