@@ -60,4 +60,3 @@ getDocs(ref).then((snapshot) => {
 }
 
  form.addEventListener("submit", submitHandler);
-
