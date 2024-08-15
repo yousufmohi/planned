@@ -8,7 +8,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 const firebaseConfig = {
-   name: "[REDACTED]"
+  "[REDACTED]"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -31,26 +31,33 @@ getDocs(ref).then((snapshot) => {
  const email = document.getElementById("email");
  const name = document.getElementById("name");
  const password = document.getElementById("password");
- const btn = document.getElementById("submit-btn");
+ const form = document.getElementById("reg-form");
 
- btn.addEventListener("click", function(e) {
-   // prevents page from auto refreshing, allowing for data to save
-    e.preventDefault();
-    console.log(email.value);
-    console.log(name.value);
-    console.log(password.value);
-   //  storing name,email,password in an object
-    var docData = {
-      name: name.value || null,
-      email: email.value || null,
-      password: password.value || null,
-    }
-   // using addDoc to add the document(data) to table
-    addDoc(ref,docData).then(() => {
-      console.log(docData);
-    })
-    .catch(err => {
-      console.log(err.message);
-    }) 
- });
+ document.getElementById( "reg-form" ).addEventListener("invalid", function( event ) {
+     event.preventDefault();
+     console.log("invalid");
+ }, true );
+
+ function submitHandler (e) {
+  // prevents page from auto refreshing, allowing for data to save
+   e.preventDefault();
+   console.log(email.value);
+   console.log(name.value);
+   console.log(password.value);
+  //  storing name,email,password in an object
+   var docData = {
+     name: name.value || null,
+     email: email.value || null,
+     password: password.value || null,
+   }
+  // using addDoc to add the document(data) to table
+   addDoc(ref,docData).then(() => {
+     console.log(docData);
+   })
+   .catch(err => {
+     console.log(err.message);
+   }) 
+}
+
+ form.addEventListener("submit", submitHandler);
 
