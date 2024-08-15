@@ -19,13 +19,21 @@
     </header>
     <div class="register">
         <form id="reg-form">
-            <label for="name">Name: </label>
-            <input type="text" id="name" placeholder="Yousuf Mohiuddin" required>
-            <label for="email">Email: </label>
-            <input type="email" id="email" placeholder="yousufmo@gmail.com" required>
-            <label for="passwprd">Password: </label>
-            <input type="password" id="password"required>
-            <input id="submit-btn" type="submit" value="Submit!" />
+            <div class="input-label">
+                <label for="name">Name: </label>
+                <input type="text" id="name" placeholder="Enter your name..." required>
+            </div>
+            <div class="input-label">
+                <label for="email">Email: </label>
+                <input type="email" id="email" placeholder="Enter your email address..." required>
+            </div>
+            <div class="input-label">
+                <label for="passwprd">Password: </label>
+                <input type="password" id="password" placeholder="Enter your password..." required>
+            </div>
+            <div class="sub-btn">
+                <input id="submit-btn" type="submit" value="Submit!"/>
+            </div>
         </form>
     </div>
 </body>

@@ -105,6 +105,24 @@ html {
 }
 
 /* Register */
+.register {
+    height: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reg-form {
+    justify-content: center;
+    display: inline-block;
+    background-color: red;
+}
+
+
+.input-label label {
+    display: block;
+}
+
 
 @media screen and (max-width: 766px) {
     .container {
