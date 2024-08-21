@@ -41,7 +41,11 @@ document.getElementById("reg-form").addEventListener("invalid", function (event)
    console.log("invalid");
 }, true);
 
+<<<<<<< HEAD
 // signup form
+=======
+
+>>>>>>> 953e14006064f85e52541791d06bf1ed7965f9e4
 form.addEventListener("submit", (e) => {
    // prevents page from auto refreshing, allowing for data to save
    e.preventDefault();
@@ -50,13 +54,17 @@ form.addEventListener("submit", (e) => {
    console.log(password.value);
 
    createUserWithEmailAndPassword(auth,email.value,password.value).then(cred => {
+<<<<<<< HEAD
       form.reset();
+=======
+>>>>>>> 953e14006064f85e52541791d06bf1ed7965f9e4
       var add = {
          uid: cred.user.accessToken,
          name:name.value
       }
       addDoc(ref,add);
    }).catch(err => {
+<<<<<<< HEAD
       console.log(err.message);
    });
 });
@@ -79,3 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
    typeWriter();
    cursor.style.display = 'none';
 });
+=======
+      console.log(err);
+   });
+});
+>>>>>>> 953e14006064f85e52541791d06bf1ed7965f9e4
