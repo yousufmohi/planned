@@ -133,15 +133,46 @@ html {
 ::placeholder {
     font-style: italic;
     font-size: 1em;
-    padding: 5px;
   }
 
 .input-label label {
     display: block;
     margin-top: 25px;
     font-size: 0.8em;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+hr {
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(146, 145, 144, 0.5);
+    width: 18em;
+    margin-top: 1.3em;
+  }
+
+.reg-text {
+    margin-top: 0.3em;
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:visited {
+    color: #0000EE;
+}
+
 
 .sub-btn {
     margin-top: 2em;
@@ -175,7 +206,6 @@ html {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
-
 
 @media screen and (max-width: 766px) {
     .container {

@@ -13,6 +13,7 @@ const firebaseConfig = {
    "[REDACTED]"
 };
 
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore();
@@ -79,3 +80,4 @@ document.addEventListener('DOMContentLoaded', () => {
    typeWriter();
    cursor.style.display = 'none';
 });
+    
