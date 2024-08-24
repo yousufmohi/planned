@@ -24,7 +24,6 @@ html {
     font-size: 1.2em;
 }
 
-
 .navbar ul {
     list-style: none;
 }
@@ -67,8 +66,6 @@ html {
     align-items: center;
     width: 100%;
 }
-
-
 
 .left-header {
     padding: 0 1em;
@@ -123,7 +120,7 @@ html {
     display: inline-block;
 }
 
-#name, #email, #password {
+#reg-name, #reg-email, #reg-password, #log-email, #log-password {
     width: 22em;
     height: 2em;
     border-radius: 6px;
@@ -206,6 +203,8 @@ hr {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+
 
 @media screen and (max-width: 766px) {
     .container {

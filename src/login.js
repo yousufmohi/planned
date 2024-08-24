@@ -7,10 +7,10 @@ import {
    addDoc
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
-   "REDACTED"
+    "REDACTED"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -19,44 +19,30 @@ const db = getFirestore();
 // collection has documents which contains fields like "names"
 const ref = collection(db, 'users');
 
-// waiting for promise to be fulfilled
-getDocs(ref).then((snapshot) => {
-   let users = []
-   snapshot.docs.forEach((doc) => {
-      users.push({ ...doc.data(), id: doc.id })
-   })
-})
-   .catch(err => {
-      console.log(err.message)
-   })
-
 // form elements
-const email = document.getElementById("reg-email");
-const name = document.getElementById("reg-name");
-const password = document.getElementById("reg-password");
-const form = document.getElementById("reg-form");
+const email = document.getElementById("log-email");
+const password = document.getElementById("log-password");
+const form = document.getElementById("log-form");
 
-document.getElementById("reg-form").addEventListener("invalid", function (event) {
+document.getElementById("log-form").addEventListener("invalid", function (event) {
    event.preventDefault();
    console.log("invalid");
 }, true);
 
-// signup form
 form.addEventListener("submit", (e) => {
-   // prevents page from auto refreshing, allowing for data to save
-   e.preventDefault();
+    e.preventDefault();
 
-   createUserWithEmailAndPassword(auth,email.value,password.value).then(cred => {
-      var add = {
-         uid: cred.user.accessToken,
-         name: name.value
-      }
-      form.reset();
-      addDoc(ref,add);
-   }).catch(err => {
-      console.log(err.message);
-   });
+    signInWithEmailAndPassword(auth, email.value, password.value)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user.email);
+      window.location.href = 'Home.html';
+    })
+    .catch((error) => {
+        console.log(error.message);
+    });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
    const txt = 'Planned';
