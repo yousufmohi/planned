@@ -7,14 +7,24 @@ import {
    addDoc
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
-    "REDACTED"
+    "[REDACTED]"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+onAuthStateChanged(auth,function(user) {
+    if (user) {
+        window.location.href = 'logged.html'
+    } else {
+      console.log("no user");
+    }
+});
+
+
 const db = getFirestore();
 // collection has documents which contains fields like "names"
 const ref = collection(db, 'users');
@@ -36,12 +46,14 @@ form.addEventListener("submit", (e) => {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log(user.email);
-      window.location.href = 'Home.html';
+      console.log(user.displayName);
+      window.location.href = 'logged.html';
     })
     .catch((error) => {
         console.log(error.message);
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

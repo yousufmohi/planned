@@ -7,14 +7,26 @@ import {
    addDoc
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
-   "REDACTED"
+   "[REDACTED]"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+onAuthStateChanged(auth,function(user) {
+   if (user) {
+      if(window.location.href == 'Home.html') {
+         console.log("outta here");
+      }
+   } else {
+     console.log("no user");
+   }
+});
+
+
 const db = getFirestore();
 // collection has documents which contains fields like "names"
 const ref = collection(db, 'users');
@@ -51,6 +63,14 @@ form.addEventListener("submit", (e) => {
          uid: cred.user.accessToken,
          name: name.value
       }
+      // setting display name of user with "name" input field
+      updateProfile(cred.user, {
+         displayName: name.value
+     }).then(() => {
+         console.log("name set");
+     }).catch((err) => {
+         console.log(err.message);
+     });
       form.reset();
       addDoc(ref,add);
    }).catch(err => {
