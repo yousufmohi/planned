@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/planned/styles/styles.css">
+    <title>Create Account</title>
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="Home.html">Logo</a>
+        <nav>
+            <ul>
+                <li><a>Notes</a></li>
+                <li><a>About</a></li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="register">
+        <h1>Your day. <span class="demo"></span> <span class="cursor"></span></h1>
+        <form id="log-form">
+            <div class="input-label">
+                <label for="email">Email: </label>
+                <input type="email" id="log-email" placeholder="Enter your email address..." required>
+            </div>
+            <div class="input-label">
+                <label for="passwprd">Password: </label>
+                <input type="password" id="log-password" placeholder="Enter your password..." required>
+            </div>
+            <div class="sub-btn">
+                <input id="submit-btn" type="submit" value="Log in"/>
+            </div>
+        </form>
+        <hr>
+        <p class="reg-text">Don't have an account? <a href="signup.html" class="link">Sign up.</a></p>
+    </div>
+</body>
+<script type="module" src="/planned/js/login.js"></script>
+</html>

@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Open+Sans:wght@500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html, body {
+    height:100%;
+}
+
+body {
+    margin: 0px;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;   
+}
+
+/* NAVBAR CSS */
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    height: 3.5em;
+    font-size: 1.2em;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    cursor: pointer;
+    color: #BF40BF;
+    display: inline;
+    margin: 0.25em;
+    text-decoration: none;
+}
+
+.navbar li a {
+    color: #BF40BF;
+    text-decoration: none;
+}
+
+.logo {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo:active {
+    color: black;
+}
+
+.logo::after {
+    color: #000;
+}
+
+/* Container One CSS */
+.container {
+    background-color: red;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    min-height: 40em;
+    align-items: center;
+    width: 100%;
+}
+
+.left-header {
+    padding: 0 1em;
+    margin: 0 20px 0 auto;
+    min-width: 300px;
+    border:1px solid black;
+}
+
+.right-header {
+    padding: 0 1em;
+    margin-right: auto;
+    margin-left: 0;
+    min-width: 300px;
+    border:1px solid black;
+}
+
+.right-header h1 {
+    font-size: 3em;
+    width: 7em;
+}
+.left-header h1 {
+    font-size: 3em;
+    width: 7em;
+}
+
+.btn {
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #BF40BF;
+    color: white;
+    height: 3em;
+    width: 7.5em;
+}
+
+/* Register */
+.register {
+    height: 40em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register h1 {
+    white-space: pre; 
+    display: inline-block;
+    position: relative;
+}
+#reg-form {
+    justify-content: center;
+    display: inline-block;
+}
+
+#reg-name, #reg-email, #reg-password, #log-email, #log-password {
+    width: 22em;
+    height: 2em;
+    border-radius: 6px;
+    border: 1px solid rgb(227, 226, 224);
+}
+
+::placeholder {
+    font-style: italic;
+    font-size: 1em;
+  }
+
+.input-label label {
+    display: block;
+    margin-top: 25px;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+hr {
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(146, 145, 144, 0.5);
+    width: 18em;
+    margin-top: 1.3em;
+  }
+
+.reg-text {
+    margin-top: 0.3em;
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:visited {
+    color: #0000EE;
+}
+
+
+.sub-btn {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit-btn {
+    width: 22em;
+    height: 2.5em;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid rgb(227, 226, 224);
+    background-color: #BF40BF;
+    color: white;
+}
+
+#submit-btn:hover {
+    background-color: #b137b1; 
+}
+
+.cursor {
+    position: absolute;
+    width: 2px; 
+    height: 1em; 
+    background-color: black;
+    animation: blink 1s step-start infinite; 
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+
+@media screen and (max-width: 766px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-header {
+        margin: 0;
+    }
+
+    .left-header {
+        margin: 0;
+    }
+}
